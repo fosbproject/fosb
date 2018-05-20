@@ -220,7 +220,7 @@ bool RpcServer::on_query_blocks(const COMMAND_RPC_QUERY_BLOCKS::request& req, CO
   res.current_height = currentHeight;
   res.full_offset = fullOffset;
   res.status = CORE_RPC_STATUS_OK;
-  return true;
+  return false;
 }
 
 bool RpcServer::on_query_blocks_lite(const COMMAND_RPC_QUERY_BLOCKS_LITE::request& req, COMMAND_RPC_QUERY_BLOCKS_LITE::response& res) {
