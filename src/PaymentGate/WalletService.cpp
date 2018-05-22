@@ -726,7 +726,7 @@ std::error_code WalletService::getTransactions(const std::vector<std::string>& a
       validatePaymentId(paymentId, logger);
     }
 
-    TransactionsInBlockInfoFilter transactionFilter(addresses, paymentId);
+    TransactionsInBlockInfoFilter transactionFilter(addresses, paymentId, logger);
 
     Crypto::Hash blockHash = parseHash(blockHashString, logger);
 
