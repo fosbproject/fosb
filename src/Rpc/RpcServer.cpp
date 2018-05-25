@@ -349,7 +349,8 @@ bool RpcServer::on_get_transactions(const COMMAND_RPC_GET_TRANSACTIONS::request&
   std::list<Hash> missed_txs;
   std::list<Transaction> txs;
   m_core.getTransactions(vh, txs, missed_txs);
-
+  m_core.get_protocol()->relay_transactions(r);
+  
   for (auto& tx : txs) {
     res.txs_as_hex.push_back(toHex(toBinaryArray(tx)));
   }
