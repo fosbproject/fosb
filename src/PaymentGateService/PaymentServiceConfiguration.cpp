@@ -63,7 +63,7 @@ void Configuration::init(const boost::program_options::variables_map& options) {
   }
 
   if (options["testnet"].as<bool>()) {
-    testnet = true;
+    testnet = false;
   }
 
   if (options.count("log-file") != 0) {
