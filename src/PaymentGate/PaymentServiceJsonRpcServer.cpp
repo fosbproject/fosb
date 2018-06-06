@@ -69,6 +69,7 @@ void PaymentServiceJsonRpcServer::processJsonRpcRequest(const Common::JsonValue&
     Common::JsonValue params(Common::JsonValue::OBJECT);
     if (req.contains("params")) {
       params = req("params");
+      return;
     }
 
     it->second(params, resp);
